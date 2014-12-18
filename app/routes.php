@@ -13,9 +13,9 @@ Route::get('/', 'IndexController@getIndex');
 Route::get('/seed', function() {
 	
 	$sql = "INSERT INTO doses (dose) VALUES
-	(1, '50 mg'),
-	(2, '100 mg'),
-	(3, '150 mg')
+	('50 mg'),
+	('100 mg'),
+	('150 mg')
 	 ";
 	
 	echo DB::statement($sql);
@@ -26,12 +26,12 @@ Route::get('/seed', function() {
 Route::get('/seedd', function() {
 	
 	 $sql = "INSERT INTO drugs (drug_NM,dose_ID) VALUES
-	(1, 'DWA', 1),
-	(2, 'DWA', 2),
-	(3, 'DWA', 3),
-	(4, 'Laravel', 1),
-	(5, 'Laravel', 2),
-	(6, 'Laravel', 3)
+	('DWA', 1),
+	('DWA', 2),
+	('DWA', 3),
+	('Laravel', 1),
+	('Laravel', 2),
+	('Laravel', 3)
 	 ";
 	
 	echo DB::statement($sql);
