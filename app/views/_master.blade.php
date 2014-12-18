@@ -27,14 +27,19 @@
       <li><a href='/'>Main</a></li>
 			<li><a href='/enroll/create'>Enroll a Patient</a></li>
     	<li><a href='/debug/routes'>Routes</a></li>
-		@else
+      <li><a href='http://p1.projectjohnlim.com/'>P1</a></li>
+      <li><a href='http://p2.projectjohnlim.com/'>P2</a></li>
+      <li><a href='http://p3.projectjohnlim.com/'>P3</a></li>
+
+
+      @else
       <p>Please log in as a Study Coordinator to register a Patient.</p>
           <li><a href='/signup'>Sign up</a> or <a href='/login'>Log in</a></li>
 		@endif
 		</ul>
 	</nav>
 
-	<a href='/'>View on Github</a>
+	<a href='https://github.com/Procrastinnovation/Project4'>View on Github</a>
 
     @yield('content')
  
