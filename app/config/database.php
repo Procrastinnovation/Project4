@@ -67,7 +67,7 @@ return array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
 			'database' => 'P4',
-			'username' => 'forge',
+			'username' => 'root',
 			'password' => '5EwJTbqgKv',
 			'charset'  => 'utf8',
 			'prefix'   => '',
