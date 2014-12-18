@@ -21,22 +21,6 @@ Route::post('/signup', 'UserController@postSignup' );
 Route::post('/login', 'UserController@postLogin' );
 Route::get('/logout', 'UserController@getLogout' );
 
-
-/**
-* Book
-* (Explicit Routing)
-*/
-Route::get('/book', 'BookController@getIndex');
-Route::get('/book/edit/{id}', 'BookController@getEdit');
-Route::post('/book/edit', 'BookController@postEdit');
-Route::get('/book/create', 'BookController@getCreate');
-Route::post('/book/create', 'BookController@postCreate');
-Route::post('/book/delete', 'BookController@postDelete');
-
-## Ajax examples
-Route::get('/book/search', 'BookController@getSearch');
-Route::post('/book/search', 'BookController@postSearch');
-
 /**
 * Enroll
 * (Explicit Routing)
@@ -55,13 +39,6 @@ Route::post('/enroll/search', 'EnrollController@postSearch');
 * (Implicit Routing)
 */
 Route::controller('debug', 'DebugController');
-
-
-/**
-* Tag
-* (Implicit RESTful Routing)
-*/
-Route::resource('tag', 'TagController');
 
 
 /**
