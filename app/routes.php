@@ -10,6 +10,25 @@ Note there are no before=>csrf filters in here - it's being handled in the BaseC
 */
 Route::get('/', 'IndexController@getIndex');
 
+Route::get('/test', function() {
+
+# 1 query (better):
+$users = User::orderBy('id','descending')->get(); # Query on the Database
+
+
+	$users = DB::table('users')->get();
+	echo Paste\Pre::render($users, '');
+
+	$drugs = DB::table('drugs')->get();
+	echo Paste\Pre::render($drugs, '');
+
+	$doses = DB::table('doses')->get();
+	echo Paste\Pre::render($doses, '');
+
+	$patients = DB::table('patients')->get();
+	echo Paste\Pre::render($patients, '');
+});
+
 Route::get('/truncatedrug', function() {
 	Drug::truncate();
 	echo 'The drug table was emptied.';
