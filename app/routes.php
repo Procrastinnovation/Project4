@@ -10,6 +10,23 @@ Note there are no before=>csrf filters in here - it's being handled in the BaseC
 */
 Route::get('/', 'IndexController@getIndex');
 
+Route::get('/truncatedrug', function() {
+	Drug::truncate();
+	echo 'The drug table was emptied.';
+});
+Route::get('/truncatedose', function() {
+	Dose::truncate();
+	echo 'The dose table was emptied.';
+});
+Route::get('/truncatep', function() {
+	Patient::truncate();
+	echo 'The Patient table was emptied.';
+});
+Route::get('/truncateu', function() {
+	User::truncate();
+	echo 'The User table was emptied.';
+});
+
 Route::get('/seed', function() {
 	
 	$sql = "INSERT INTO doses (dose) VALUES
