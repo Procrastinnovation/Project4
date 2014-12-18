@@ -23,6 +23,36 @@ Route::get('/seed', function() {
 	$doses = DB::table('doses')->get();
 	echo Paste\Pre::render($doses, '');
 });
+Route::get('/seedd', function() {
+	
+	 $sql = "INSERT INTO drugs (drug_NM,dose_ID) VALUES
+	(1, 'DWA', 1),
+	(2, 'DWA', 2),
+	(3, 'DWA', 3),
+	(4, 'Laravel', 1),
+	(5, 'Laravel', 2),
+	(6, 'Laravel', 3)
+	 ";
+	
+	echo DB::statement($sql);
+	$drugs = DB::table('drugs')->get();
+	echo Paste\Pre::render($drugs, '');
+});
+Route::get('/test', function() {
+
+$doses = Dose::orderBy('id','descending')->get(); # Query on the Database
+$first_dose = $doses->first(); # Query on the Collection
+
+return 'example';
+	
+	$sql = 'SELECT * FROM doses';
+
+	$sql = DB::raw($sql);
+
+
+	echo Paste\Pre::render($sql,'');*/
+});
+
 
 /**
 * User
