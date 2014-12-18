@@ -12,10 +12,6 @@ Route::get('/', 'IndexController@getIndex');
 
 Route::get('/test', function() {
 
-# 1 query (better):
-$users = User::orderBy('id','descending')->get(); # Query on the Database
-
-
 	$users = DB::table('users')->get();
 	echo Paste\Pre::render($users, '');
 
