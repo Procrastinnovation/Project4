@@ -20,8 +20,8 @@ Route::get('/seed', function() {
 
 	
 	echo DB::statement($sql);
-	$patients = DB::table('patients')->get();
-	echo Paste\Pre::render($patients, '');
+	$doses = DB::table('doses')->get();
+	echo Paste\Pre::render($doses, '');
 });
 
 /**
