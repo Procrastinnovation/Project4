@@ -17,12 +17,12 @@ Route::get('/seed', function() {
 	(2, '100 mg'),
 	(3, '150 mg')
 	 ";
-
 	
 	echo DB::statement($sql);
 	$doses = DB::table('doses')->get();
 	echo Paste\Pre::render($doses, '');
 });
+
 Route::get('/seedd', function() {
 	
 	 $sql = "INSERT INTO drugs (drug_NM,dose_ID) VALUES
@@ -37,20 +37,6 @@ Route::get('/seedd', function() {
 	echo DB::statement($sql);
 	$drugs = DB::table('drugs')->get();
 	echo Paste\Pre::render($drugs, '');
-});
-Route::get('/test', function() {
-
-$doses = Dose::orderBy('id','descending')->get(); # Query on the Database
-$first_dose = $doses->first(); # Query on the Collection
-
-return 'example';
-	
-	$sql = 'SELECT * FROM doses';
-
-	$sql = DB::raw($sql);
-
-
-	echo Paste\Pre::render($sql,'');*/
 });
 
 
