@@ -10,19 +10,12 @@ Note there are no before=>csrf filters in here - it's being handled in the BaseC
 */
 Route::get('/', 'IndexController@getIndex');
 
-Route::get('/test', function() {
+Route::get('/t', function() {
 
 	$users = DB::table('users')->get();
 	echo Paste\Pre::render($users, '');
 
-	$drugs = DB::table('drugs')->get();
-	echo Paste\Pre::render($drugs, '');
 
-	$doses = DB::table('doses')->get();
-	echo Paste\Pre::render($doses, '');
-
-	$patients = DB::table('patients')->get();
-	echo Paste\Pre::render($patients, '');
 });
 
 Route::get('/truncatedrug', function() {
